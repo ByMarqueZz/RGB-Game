@@ -73,8 +73,8 @@ export default function App() {
     rgb2.classList.remove('vibrate-1');
     rgb2.style.background = `linear-gradient(to right, #eee 8%, #ddd 18%, #eee 33%);`
     button.style.display = "none"
-    text.innerHTML = `rgb(${rgb.join(', ')}) <span className='background-text'>?</span>`
     playGame()
+    text.innerHTML = `rgb(${rgb.join(', ')}) <span className='background-text'>?</span>`
   }
 
   return (
