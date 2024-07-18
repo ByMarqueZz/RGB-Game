@@ -61,20 +61,21 @@ export default function App() {
   }
 
   function playGame() {
-    setRgb(randomRgb());
+    const text = document.getElementsByClassName('text')[0] as HTMLElement;
+    const random = randomRgb()
+    setRgb(random);
     setRandomNumber(Math.floor(Math.random() * 6));
+    text.innerHTML = `rgb(${random.join(', ')}) <span className='background-text'>?</span>`
   }
 
   function reloadGame() {
     const rgb2 = document.getElementsByClassName('rgb')[0] as HTMLElement;
     const button = document.getElementsByClassName('reload')[0] as HTMLElement;
-    const text = document.getElementsByClassName('text')[0] as HTMLElement;
     rgb2.classList.remove('win')
     rgb2.classList.remove('vibrate-1');
     rgb2.style.background = `linear-gradient(to right, #eee 8%, #ddd 18%, #eee 33%);`
     button.style.display = "none"
     playGame()
-    text.innerHTML = `rgb(${rgb.join(', ')}) <span className='background-text'>?</span>`
   }
 
   return (
